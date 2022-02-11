@@ -10,6 +10,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
+        <h3>---------------D.E.M.O---------------</h3>
         <DisplayData />
       </div>
     </ApolloProvider>
