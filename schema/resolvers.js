@@ -4,11 +4,12 @@ const _ = require('lodash');
 const resolvers = {
     Query: {
         // User resolvers
-        users: () => {
+        users: (parent,args,context,info) => {
+            console.log(context);
             return UserList;
         },
 
-        user: (parent, args) => {
+        user: (parent, args, context, info) => {
             const id = args.id; 
             const user = _.find(UserList, { id: Number(id) });
             return user;
@@ -19,7 +20,7 @@ const resolvers = {
             return MovieList;
         },
 
-        movie: (parent, args) => {
+        movie: (parent, args, context, info) => {
             const name = args.name;
             const movie = _.find(MovieList, { name });
             return movie;
